@@ -1,0 +1,19 @@
+{
+  "author": "",
+  "name": "a8c-twitter-irc",
+  "version": "0.0.0",
+  "scripts": {
+    "start" : "coffee server"
+  },
+  "dependencies": {
+    "irc": "git://github.com/martynsmith/node-irc.git",
+    "express": "git://github.com/visionmedia/express.git",
+    "mongoose":"git://github.com/LearnBoost/mongoose.git",
+    "coffee-script": "*"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
