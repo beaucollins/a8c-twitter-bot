@@ -50,7 +50,7 @@ watcher.on 'mention', (user, message)->
 bot
   .command(
     name: 'status',
-    description: 'displays monitoring status'
+    help: 'Displays monitoring status',
     action: (from, channel, args, text)->
       if watcher.watchers.length > 0
         watcher.watchers.forEach (watcher)->
@@ -60,6 +60,7 @@ bot
   )
   .command(
     name: 'add',
+    help: 'Creates Twitter auth URL'
     description: 'Create URL to authenticate a new twitter user to monitor, sent as private message to user who made the command',
     action: (from, channel, args, text)->
       oauth_client = provider.makeClient()
@@ -74,7 +75,7 @@ bot
   .command(
     name: 'remove'
     matcher: /^remove([\s]{1,}.*)?$/i,
-    help: 'remove :screen_name',
+    help: 'Removes all monitoring for the given screen name. Example: remove @BobaFett',
     description: 'stop monitoring the specified twitter user',
     action: (fram, channel, args, text)->
       names = args[1]
