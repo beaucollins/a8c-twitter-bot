@@ -12,6 +12,7 @@ username = process.env.NICK || 'twitterbot'
 channel = process.env.CHANNEL || '#mobile-bot'
 debug = process.env.DEBUG_NICK
 host = process.env.HTTP_HOST || 'localhost:3000'
+http_port = process.env.PORT || 3000
 
 # Set up the Twitter oauth provider
 provider = oauth key: process.env.TWITTER_OAUTH_KEY
@@ -106,7 +107,7 @@ web.get '/authorize', (req, res)->
       bot.say channel, "Started monitoring @#{params.screen_name}"
       
 
-web.listen process.env.PORT || 3000
+web.listen http_port
 
-console.log "Web server listening on", process.env.PORT || 3000
+console.log "Web server listening on", http_port
 
